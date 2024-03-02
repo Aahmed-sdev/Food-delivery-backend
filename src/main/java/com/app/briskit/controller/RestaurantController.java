@@ -19,10 +19,9 @@ public class RestaurantController {
 	private RestaurantService restaurantService;
 	
 	
-	@GetMapping("/all")
-	public List<RestaurantsEB> getAllRestaurants(@RequestParam(value = "offset", defaultValue = "0") String offset,
-			@RequestParam(value = "limit", defaultValue = "100") String limit){
-		return restaurantService.findAllRestaurant(Integer.parseInt(offset), Integer.parseInt(limit));
+	@GetMapping(value = "")
+	public List<RestaurantsEB> getAllRestaurants(){
+		return restaurantService.findAllRestaurant();
 	}
 	
 }

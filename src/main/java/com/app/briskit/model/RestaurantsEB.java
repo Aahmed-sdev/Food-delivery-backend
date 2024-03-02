@@ -33,5 +33,5 @@ public class RestaurantsEB {
 	@Column(name = "UPDATED_AT")
 	private Date updatedAt;
 	@Column(name = "DELETED")
-	private String Deleted;
+	private String deleted;
 }
