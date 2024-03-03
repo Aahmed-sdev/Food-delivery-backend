@@ -19,7 +19,8 @@ public interface RestaurantRepository extends JpaRepository<RestaurantsEB, Long>
 	@Query(value = "SELECT DISTINCT r.* FROM RESTAURANTS r " +
             "JOIN MENU_ITEMS m ON r.RESTAURANT_ID = m.RESTAURANT_ID " +
 			" where m.SERVE_START_TIME IS NOT NULL and " +
-            " :time BETWEEN m.SERVE_START_TIME and COALESCE(m.SERVE_END_TIME, '00:00:00')"
+            " :time BETWEEN m.SERVE_START_TIME and " +
+            "COALESCE(m.SERVE_END_TIME, ADDTIME('24:00:00', m.SERVE_START_TIME)))"
 			, nativeQuery = true)
 	List<RestaurantsEB> findAllRestaurantByTime(@Param(value = "time") LocalTime searchTime);
 }
