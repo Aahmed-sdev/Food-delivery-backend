@@ -1,5 +1,6 @@
 package com.app.briskit.model;
 
+import java.time.LocalTime;
 import java.util.Date;
 
 import jakarta.persistence.CascadeType;
@@ -25,9 +26,9 @@ public class MenuItemsEB {
 	@Column(name = "CATEGORY")
 	private String category;
 	@Column(name = "SERVE_START_TIME" )
-	private Date serveStartTime;
+	private LocalTime serveStartTime;
 	@Column(name = "SERVE_END_TIME")
-	private Date serveEndTime;
+	private LocalTime serveEndTime;
 	@Column(name = "DESCRIPTION")
 	private String description;
 	@Column(name = "CREATED_AT")
@@ -67,19 +68,19 @@ public class MenuItemsEB {
 		this.category = category;
 	}
 
-	public Date getServeStartTime() {
+	public LocalTime getServeStartTime() {
 		return serveStartTime;
 	}
 
-	public void setServeStartTime(Date serveStartTime) {
+	public void setServeStartTime(LocalTime serveStartTime) {
 		this.serveStartTime = serveStartTime;
 	}
 
-	public Date getServeEndTime() {
+	public LocalTime getServeEndTime() {
 		return serveEndTime;
 	}
 
-	public void setServeEndTime(Date serveEndTime) {
+	public void setServeEndTime(LocalTime serveEndTime) {
 		this.serveEndTime = serveEndTime;
 	}
 

@@ -1,5 +1,6 @@
 package com.app.briskit.service;
 
+import java.time.LocalTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,8 @@ public class RestaurantServiceImp implements RestaurantService {
 	}
 
 	@Override
-	public List<RestaurantsEB> findAllRestaurant() {
-		return restaurantRepo.findAllRestaurant();
+	public List<RestaurantsEB> findAllRestaurantByTime(LocalTime searchTime) {
+		return restaurantRepo.findAllRestaurantByTime(searchTime);
 	}
 
 }
