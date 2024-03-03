@@ -18,6 +18,6 @@ public class RoleEB {
 	private String code;
 	@Column(name = "DESCRIPTION")
 	private String description;
-	@Column(name = "DELTED")
+	@Column(name = "DELETED")
 	private String deleted;
 }

@@ -1,8 +1,9 @@
 package com.app.briskit.dto;
 
-import com.app.briskit.model.RoleEB;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class UserDTO {
+	@JsonIgnore
 	private Long usersId;
 	private String firstName;
 	private String middleName;
@@ -11,6 +12,7 @@ public class UserDTO {
 	private String email;
 	private String username;
 	private String phoneNo;
+	@JsonIgnore
 	private String deleted;
 	
 	public Long getUsersId() {

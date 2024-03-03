@@ -27,7 +27,7 @@ public class UserServiceImp implements UserService {
 	@Override
 	public UserDTO registerNewUser(UserDTO user, ROLE role) {
 		//Check user already exists or not
-		if(!validateUserInput(user, role)) {
+		if(validateUserInput(user, role)) {
 			RoleEB roleEntity =  roleRepo.findRoleByCode(user.getRole());
 			UsersEB userEntity = Utils.convertToUserEntity(user);
 			userEntity.setRole(roleEntity);
