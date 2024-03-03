@@ -1,42 +1,18 @@
-package com.app.briskit.model;
+package com.app.briskit.dto;
 
-import java.sql.Date;
+import com.app.briskit.model.RoleEB;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "USERS")
-public class UsersEB {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "USERS_ID")
+public class UserDTO {
 	private Long usersId;
-	@Column(name = "FIRST_NAME")
 	private String firstName;
-	@Column(name = "MIDDLE_NAME")
 	private String middleName;
-	@Column(name = "LAST_NAME")
 	private String lastName;
-	@OneToOne
-	private RoleEB role;
-	@Column(name = "EMAIL", unique = true)
+	private String role;
 	private String email;
-	@Column(name = "USERNAME", unique = true)
 	private String username;
-	@Column(name = "PHONE_NO", unique = true)
 	private String phoneNo;
-	@Column(name = "CREATED_AT")
-	private Date createdAt;
-	@Column(name = "UPDATED_AT")
-	private Date updatedAt;
-	@Column(name = "DELETED")
 	private String deleted;
+	
 	public Long getUsersId() {
 		return usersId;
 	}
@@ -61,10 +37,10 @@ public class UsersEB {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public RoleEB getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(RoleEB role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 	public String getEmail() {
@@ -85,25 +61,12 @@ public class UsersEB {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	public Date getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
-	}
 	public String getDeleted() {
 		return deleted;
 	}
 	public void setDeleted(String deleted) {
 		this.deleted = deleted;
 	}
-	
 	
 	
 }

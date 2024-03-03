@@ -7,14 +7,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+@Entity(name = "role")
 @Table(name = "ROLE")
-public class RoleRB {
+public class RoleEB {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ROLE_ID")
 	private Long roleId;
-	@Column(name = "CODE")
+	@Column(name = "CODE", unique = true)
 	private String code;
 	@Column(name = "DESCRIPTION")
 	private String description;
