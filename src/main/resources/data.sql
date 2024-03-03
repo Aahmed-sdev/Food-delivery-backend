@@ -1,5 +1,5 @@
 -------- This script will run every server startup ------------------
-
+USE BRISKIT_DELIVERY_DB;
 
 ------------------------ INSERT ROLE IN DB -------------------------
 -- Inserting ADMIN role

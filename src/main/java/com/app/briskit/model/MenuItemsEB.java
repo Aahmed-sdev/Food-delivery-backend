@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 @Table(name = "MENU_ITEMS")
 public class MenuItemsEB {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "MENU_ITEMS_ID")
 	private long menuItemsId;
 	
@@ -42,4 +42,94 @@ public class MenuItemsEB {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "RESTAURANT_ID")
 	private RestaurantsEB restaurant;
+
+	public long getMenuItemsId() {
+		return menuItemsId;
+	}
+
+	public void setMenuItemsId(long menuItemsId) {
+		this.menuItemsId = menuItemsId;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public Date getServeStartTime() {
+		return serveStartTime;
+	}
+
+	public void setServeStartTime(Date serveStartTime) {
+		this.serveStartTime = serveStartTime;
+	}
+
+	public Date getServeEndTime() {
+		return serveEndTime;
+	}
+
+	public void setServeEndTime(Date serveEndTime) {
+		this.serveEndTime = serveEndTime;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public String getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(String deleted) {
+		this.deleted = deleted;
+	}
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
+
+	public RestaurantsEB getRestaurant() {
+		return restaurant;
+	}
+
+	public void setRestaurant(RestaurantsEB restaurant) {
+		this.restaurant = restaurant;
+	}
+	
+	
 }

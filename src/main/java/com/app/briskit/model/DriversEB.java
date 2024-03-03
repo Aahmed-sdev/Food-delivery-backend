@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 @Table(name = "DRIVERS")
 public class DriversEB {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "DRIVERS_ID")
 	private Long driversId;
 	
@@ -38,5 +38,62 @@ public class DriversEB {
 	
 	@Column(name = "DELETED")
 	private String deleted;
+
+	public Long getDriversId() {
+		return driversId;
+	}
+
+	public void setDriversId(Long driversId) {
+		this.driversId = driversId;
+	}
+
+	public UsersEB getUser() {
+		return user;
+	}
+
+	public void setUser(UsersEB user) {
+		this.user = user;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+	public Date getOrderPickedAt() {
+		return orderPickedAt;
+	}
+
+	public void setOrderPickedAt(Date orderPickedAt) {
+		this.orderPickedAt = orderPickedAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+
+	public String getDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(String deleted) {
+		this.deleted = deleted;
+	}
+	
 	
 }

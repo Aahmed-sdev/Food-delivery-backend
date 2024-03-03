@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 @Table(name = "ORDERS")
 public class OrdersEB {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ORDERS_ID")
 	private Long ordersId;
 	
@@ -36,5 +36,47 @@ public class OrdersEB {
 	//private MenuItemsEB menuItems;
 	@Column(name = "TOTAL_AMOUNT")
 	private Double totalAmmount;
+	public Long getOrdersId() {
+		return ordersId;
+	}
+	public void setOrdersId(Long ordersId) {
+		this.ordersId = ordersId;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	public String getUsersId() {
+		return usersId;
+	}
+	public void setUsersId(String usersId) {
+		this.usersId = usersId;
+	}
+	public String getRestaurantId() {
+		return restaurantId;
+	}
+	public void setRestaurantId(String restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+	public Double getTotalAmmount() {
+		return totalAmmount;
+	}
+	public void setTotalAmmount(Double totalAmmount) {
+		this.totalAmmount = totalAmmount;
+	}
 
 }

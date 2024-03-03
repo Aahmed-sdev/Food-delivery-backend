@@ -7,14 +7,16 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "USERS")
 public class UsersEB {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "USERS_ID")
 	private Long usersId;
 	@Column(name = "FIRST_NAME")
@@ -24,11 +26,15 @@ public class UsersEB {
 	@Column(name = "LAST_NAME")
 	private String lastName;
 	@OneToOne
+	@NotNull
+	@JoinColumn(name = "ROLE_ID")
 	private RoleEB role;
 	@Column(name = "EMAIL", unique = true)
 	private String email;
 	@Column(name = "USERNAME", unique = true)
 	private String username;
+	@Column(name = "PASSWORD")
+	private String password;
 	@Column(name = "PHONE_NO", unique = true)
 	private String phoneNo;
 	@Column(name = "CREATED_AT")
@@ -78,6 +84,12 @@ public class UsersEB {
 	}
 	public void setUsername(String username) {
 		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getPhoneNo() {
 		return phoneNo;

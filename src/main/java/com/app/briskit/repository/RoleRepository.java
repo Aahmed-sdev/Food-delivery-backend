@@ -8,6 +8,6 @@ import com.app.briskit.model.RoleEB;
 
 public interface RoleRepository extends JpaRepository<RoleEB, Long> {
 	
-	@Query("select r from role r where r.code=:code and r.deleted='N' ")
+	@Query(value = "select r from RoleEB r where r.code=:code and r.deleted='N' ", nativeQuery = false)
 	RoleEB findRoleByCode(@Param(value = "code") String code);
 }

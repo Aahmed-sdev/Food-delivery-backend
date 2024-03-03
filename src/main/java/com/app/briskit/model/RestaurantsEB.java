@@ -14,11 +14,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
-@Entity(name = "restaurants")
+@Entity
 @Table(name = "RESTAURANTS")
 public class RestaurantsEB {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "RESTAURANT_ID")
 	private Long restaurantId;
 	@Column(name = "NAME")
@@ -34,4 +34,47 @@ public class RestaurantsEB {
 	private Date updatedAt;
 	@Column(name = "DELETED")
 	private String deleted;
+	public Long getRestaurantId() {
+		return restaurantId;
+	}
+	public void setRestaurantId(Long restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Long getLocation() {
+		return location;
+	}
+	public void setLocation(Long location) {
+		this.location = location;
+	}
+	public List<MenuItemsEB> getMenuItems() {
+		return menuItems;
+	}
+	public void setMenuItems(List<MenuItemsEB> menuItems) {
+		this.menuItems = menuItems;
+	}
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
+	public String getDeleted() {
+		return deleted;
+	}
+	public void setDeleted(String deleted) {
+		this.deleted = deleted;
+	}
+	
 }

@@ -17,8 +17,23 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping("/createAdmin")
+	@PostMapping("/register/admin")
 	public UserDTO createAdminUser(@RequestBody UserDTO user) {
 		return userService.registerNewUser(user, ROLE.ADMIN);
+	}
+	
+	@PostMapping("/register/customer")
+	public UserDTO createCustomerUser(@RequestBody UserDTO user) {
+		return userService.registerNewUser(user, ROLE.CUSTOMER);
+	}
+	
+	@PostMapping("/register/deliveryPerson")
+	public UserDTO createDeliveryUser(@RequestBody UserDTO user) {
+		return userService.registerNewUser(user, ROLE.DELIVERY_PERSON);
+	}
+	
+	@PostMapping("/register/restaurant")
+	public UserDTO createRestaurantUser(@RequestBody UserDTO user) {
+		return userService.registerNewUser(user, ROLE.RESTAURANT);
 	}
 }

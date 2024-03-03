@@ -15,6 +15,6 @@ import jakarta.persistence.PersistenceContext;
 @Repository
 public interface RestaurantRepository extends JpaRepository<RestaurantsEB, Long>{
 	
-	@Query("Select r from restaurants r where deleted = 'N'")
+	@Query("Select r from RestaurantsEB r where deleted = 'N'")
 	List<RestaurantsEB> findAllRestaurant();
 }
