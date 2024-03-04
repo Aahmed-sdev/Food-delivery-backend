@@ -17,7 +17,9 @@ import com.app.briskit.service.exception.InvalidUserInputException;
 
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
+@Tag(name = "Restaurant Service")
 @RestController
 @RequestMapping("/restaurants")
 public class RestaurantController {

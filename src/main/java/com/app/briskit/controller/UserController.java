@@ -10,6 +10,9 @@ import com.app.briskit.dto.UserDTO;
 import com.app.briskit.service.UserService;
 import com.app.briskit.utils.ROLE;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+@Tag(name = "User Registation service")
 @RestController
 @RequestMapping("/user")
 public class UserController {
