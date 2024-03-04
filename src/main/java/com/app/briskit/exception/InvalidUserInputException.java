@@ -1,4 +1,4 @@
-package com.app.briskit.service.exception;
+package com.app.briskit.exception;
 
 public class InvalidUserInputException extends RuntimeException {
 

@@ -5,12 +5,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.briskit.dto.UserDTO;
+import com.app.briskit.exception.InvalidUserInputException;
+import com.app.briskit.exception.UserAlreadyExistsException;
 import com.app.briskit.model.RoleEB;
 import com.app.briskit.model.UsersEB;
 import com.app.briskit.repository.RoleRepository;
 import com.app.briskit.repository.UsersRepository;
-import com.app.briskit.service.exception.InvalidUserInputException;
-import com.app.briskit.service.exception.UserAlreadyExistsException;
 import com.app.briskit.utils.ROLE;
 import com.app.briskit.utils.Utils;
 

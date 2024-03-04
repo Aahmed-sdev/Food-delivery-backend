@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.app.briskit.model.RestaurantsEB;
 import com.app.briskit.service.RestaurantService;
-import com.app.briskit.service.exception.InvalidUserInputException;
-
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
